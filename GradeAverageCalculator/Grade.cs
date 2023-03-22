@@ -18,7 +18,7 @@
         public override string ToString() =>
             $"{Score} {FigureFromScore()}";
 
-        private string FigureFromScore()
+        public string FigureFromScore()
         {
             if(Score > 96)
             {
