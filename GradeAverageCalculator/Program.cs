@@ -24,17 +24,7 @@ int jeong3 = 98;
 int jeong4 = 100;
 int jeong5 = 97;
 
-int sophiaSum = sophia1 + sophia2 + sophia3 + sophia4 + sophia5;
-int nicolasSum = nicolas1 + nicolas2 + nicolas3 + nicolas4 + nicolas5;
-int zahirahSum = zahirah1 + zahirah2 + zahirah3 + zahirah4 + zahirah5;
-int jeongSum = jeong1 + jeong2 + jeong3 + jeong4 + jeong5;
-
-decimal sophiaScore = sophiaSum / currentAssignments;
-decimal nicolasScore = nicolasSum / currentAssignments;
-decimal zahirahScore = zahirahSum / currentAssignments;
-decimal jeongScore = jeongSum / currentAssignments;
-
-Console.WriteLine("Sophia: " + sophiaScore);
-Console.WriteLine("Nicolas: " + nicolasScore);
-Console.WriteLine("Zahirah: " + zahirahScore);
-Console.WriteLine("Jeong: " + jeongScore);
+Console.WriteLine("Sophia: " + sophia1 +", "+ sophia2 +", "+ sophia3 +", "+ sophia4 +", "+ sophia5);
+Console.WriteLine("Nicolas: " + nicolas1 +", "+ nicolas2 +", "+ nicolas3 +", "+ nicolas4 +", "+ nicolas5);
+Console.WriteLine("Zahirah: " + zahirah1 +", "+ zahirah2 +", "+ zahirah3 +", "+ zahirah4 +", "+ zahirah5);
+Console.WriteLine("Jeong: " + jeong1 +", "+ jeong2 +", "+ jeong3 +", "+ jeong4 +", "+ jeong5);
