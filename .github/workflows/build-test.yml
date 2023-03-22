@@ -1,0 +1,53 @@
+name: Build and test
+
+on:
+  push:
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    env:
+      configuration: "Release"
+      runtime: "linux-x64"
+
+    runs-on: [self-hosted, Linux, X64, WebBeds, kubernetes, base]
+    strategy:
+      matrix:
+        dotnet-version: ["6.0"]
+        
+    steps:
+      - name: Checkout GitHub Action Repo
+        uses: actions/checkout@v3
+      
+      - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+          
+        # restore all needed packages for our project
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Unit test
+        if: always()
+        run: dotnet test GradeAverageCalculator\GradeAverageCalculator.csproj --no-restore --collect:"XPlat Code Coverage" --results-directory coverage 
+
+      - name: Code Coverage Report
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: coverage/**/coverage.cobertura.xml
+          badge: true
+          fail_below_min: true
+          format: markdown
+          hide_branch_rate: false
+          hide_complexity: true
+          indicators: true
+          output: both
+          thresholds: '0'
+
+      - name: Clean
+        run: dotnet clean
+
+      - name: Test # https://docs.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests?pivots=mstest
+        run: dotnet test --configuration ${{ env.configuration }} --filter "(Integration!=true&FullyQualifiedName!~Integration&TestCategory!~Integration)|Priority=1"
