@@ -28,7 +28,7 @@ jeong.AddTestResult(98);
 jeong.AddTestResult(100);
 jeong.AddTestResult(97);
 
-Console.WriteLine($"{sophia.Name}: { sophia.GetAverageScore()}");
-Console.WriteLine($"{nicolas.Name}: {nicolas.GetAverageScore()}");
-Console.WriteLine($"{zahirah.Name}: {zahirah.GetAverageScore()}");
-Console.WriteLine($"{jeong.Name}: {jeong.GetAverageScore()}");
+Console.WriteLine($"{sophia.Name}: {new Grade(sophia.GetAverageScore())}");
+Console.WriteLine($"{nicolas.Name}: {new Grade(nicolas.GetAverageScore())}");
+Console.WriteLine($"{zahirah.Name}: {new Grade(zahirah.GetAverageScore())}");
+Console.WriteLine($"{jeong.Name}: {new Grade(jeong.GetAverageScore())}");
