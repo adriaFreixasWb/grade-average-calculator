@@ -1,30 +1,34 @@
-﻿int currentAssignments = 5;
+﻿using GradeAverageCalculator;
 
-int sophia1 = 93;
-int sophia2 = 87;
-int sophia3 = 98;
-int sophia4 = 95;
-int sophia5 = 100;
+var sophia = new Student("Sophia");
+sophia.AddTestResult(93);
+sophia.AddTestResult(87);
+sophia.AddTestResult(98);
+sophia.AddTestResult(95);
+sophia.AddTestResult(100);
 
-int nicolas1 = 80;
-int nicolas2 = 83;
-int nicolas3 = 82;
-int nicolas4 = 88;
-int nicolas5 = 85;
+var nicolas = new Student("Nicolas");
+nicolas.AddTestResult(80);
+nicolas.AddTestResult(83);
+nicolas.AddTestResult(82);
+nicolas.AddTestResult(88);
+nicolas.AddTestResult(85);
 
-int zahirah1 = 84;
-int zahirah2 = 96;
-int zahirah3 = 73;
-int zahirah4 = 85;
-int zahirah5 = 79;
+var zahirah = new Student("Zahirah");
+zahirah.AddTestResult(84);
+zahirah.AddTestResult(96);
+zahirah.AddTestResult(73);
+zahirah.AddTestResult(85);
+zahirah.AddTestResult(79);
 
-int jeong1 = 90;
-int jeong2 = 92;
-int jeong3 = 98;
-int jeong4 = 100;
-int jeong5 = 97;
+var jeong = new Student("Jeong");
+jeong.AddTestResult(90);
+jeong.AddTestResult(92);
+jeong.AddTestResult(98);
+jeong.AddTestResult(100);
+jeong.AddTestResult(97);
 
-Console.WriteLine("Sophia: " + sophia1 +", "+ sophia2 +", "+ sophia3 +", "+ sophia4 +", "+ sophia5);
-Console.WriteLine("Nicolas: " + nicolas1 +", "+ nicolas2 +", "+ nicolas3 +", "+ nicolas4 +", "+ nicolas5);
-Console.WriteLine("Zahirah: " + zahirah1 +", "+ zahirah2 +", "+ zahirah3 +", "+ zahirah4 +", "+ zahirah5);
-Console.WriteLine("Jeong: " + jeong1 +", "+ jeong2 +", "+ jeong3 +", "+ jeong4 +", "+ jeong5);
+Console.WriteLine($"{sophia.Name}: { sophia.GetAverageScore()}");
+Console.WriteLine($"{nicolas.Name}: {nicolas.GetAverageScore()}");
+Console.WriteLine($"{zahirah.Name}: {zahirah.GetAverageScore()}");
+Console.WriteLine($"{jeong.Name}: {jeong.GetAverageScore()}");
