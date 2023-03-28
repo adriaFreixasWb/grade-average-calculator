@@ -2,8 +2,10 @@ name: hello-world
 on: 
   workflow_dispatch:
     inputs:
-      tags:
-        description: 'Test scenario tags'  
+      person:
+        description: input persons name
+        required: true
+        default: "john doe"
 jobs:
   my-job:
     runs-on: ubuntu-latest
