@@ -1,0 +1,14 @@
+name: greet-people
+on: 
+  workflow_dispatch:
+    inputs:
+      person:
+        description: input person name
+        required: true
+        default: "john doe"
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: greet-current-person
+        run: echo "Hello ${{ github.event.inputs.person }}"
